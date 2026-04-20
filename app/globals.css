@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #080c1a;
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.15;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Scrollbar thin for thumbnails */
+.thumb-row::-webkit-scrollbar {
+  height: 4px;
+}
+.thumb-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+.thumb-row::-webkit-scrollbar-thumb {
+  background: rgba(249, 115, 22, 0.4);
+  border-radius: 99px;
+}
+
+@keyframes epulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(220, 38, 38, 0.5); }
+  50%       { box-shadow: 0 8px 32px rgba(220, 38, 38, 0.75); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60%  { transform: translateX(-6px); }
+  40%, 80%  { transform: translateX(6px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 0.8s linear infinite;
+}
+
+/* Responsive grid helpers */
+@media (max-width: 900px) {
+  .desk-nav,
+  .desk-lang {
+    display: none !important;
+  }
+  .burger {
+    display: flex !important;
+  }
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .feat-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
